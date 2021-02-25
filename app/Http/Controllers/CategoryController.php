@@ -13,6 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        //creacion de enpion den laravel 8
         // select * from categories
         $categories = Category::all();
         return response()->json(['categories' => $categories]);
