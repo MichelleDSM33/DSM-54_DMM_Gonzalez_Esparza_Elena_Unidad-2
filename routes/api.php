@@ -12,10 +12,24 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
+*/
 
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});*/
+}); */
 
-Route::apiResource('category','\App\Http\Controllers\CategoryController');
+//Routes category
+//Routes category
+Route::apiResource('category','\App\Http\Controllers\categoryController');
+//post
+Route::apiResource('post','\App\Http\Controllers\PostController');
+//// examen 
+Route::get('Examen','\App\Http\Controllers\PostController@Examen');
+
+Route::get('postByCategory/{id}','\App\Http\Controllers\PostController@postByCategory');
+
+Route::get('postforteen/{min?}','\App\Http\Controllers\PostController@postforteen');
+Route::get('lastsquerys/{id}','\App\Http\Controllers\PostController@lastsquerys');
+
+
+ 
